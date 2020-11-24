@@ -11,9 +11,8 @@ client.on('ready', () => {
 
 client.on('message', async msg => {
   if (msg.author.id === '651858294478078002') {
-    msg.react('🍌').then(() => 
-      msg.react('🐒')
-    );
+    await msg.react('🍌');
+    await msg.react('🐒');
   }
 
   if (msg.mentions.has(client.user.id)) {
