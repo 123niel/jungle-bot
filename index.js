@@ -9,8 +9,13 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.author.id === '651858294478078002') {
-    console.log(msg.author.client.user.tag)
-    msg.react('🍌').then(() => msg.react('🐒'));
+    msg.react('🍌').then(() => 
+      msg.react('🐒')
+    );
+  }
+
+  if(msg.mentions.has(client.user.id) || msg.content.includes('🐒')) {
+    msg.channel.send('uh, uh, ah, ah', { tts: true });
   }
 });
 
