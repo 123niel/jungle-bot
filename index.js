@@ -15,7 +15,7 @@ client.on('message', async msg => {
     await msg.react('🐒');
   }
 
-  if (msg.mentions.has(client.user.id)) {
+  if (msg.mentions.members.first().user.id === client.user.id) {
     msg.channel.send('uh, uh, ah, ah', { tts: true });
   }
 
