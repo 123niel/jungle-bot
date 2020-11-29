@@ -1,9 +1,10 @@
 const Discord = require('discord.js');
+const fetch = require("node-fetch");
+require('dotenv').config();
+
+
 const client = new Discord.Client();
 
-const fetch = require("node-fetch")
-
-const config = require("./config.json");
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -27,4 +28,4 @@ client.on('message', async msg => {
   }
 });
 
-client.login(config.token);
+client.login();
